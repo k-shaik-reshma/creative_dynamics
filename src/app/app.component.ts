@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './core/auth.service';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'creative_dynamics';
+  message: string = 'Loading...';
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authService.getHelloMessage().subscribe(response => {
+      this.message = response.message;
+    });
+  }
 }
