@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from './features/user/profile/profile.component';
+import { LandingPageComponent } from './features/landing-page/landing-page.component';
 
-export const routes: Routes = [
-  { path: 'user-profile', component: ProfileComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home' }
+const routes: Routes = [
+  { path: '/landing', component: LandingPageComponent },
+  { path: '**', redirectTo: '' }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
