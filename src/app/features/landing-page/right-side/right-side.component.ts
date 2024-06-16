@@ -32,8 +32,11 @@ export class RightSideComponent {
       this.authService.login(this.loginForm.value)
       .subscribe({
         next: (response: any) => {
-          console.log(response);
-          this.router.navigate(['/dashboard']);
+          if (response.user.type === 'chef') {
+            this.router.navigate(['/chef']);
+          } else if (response.user.type === 'customer') {
+            this.router.navigate(['/dashboard']);
+          }
         },
         error: (error: any) => {
           console.error(error);

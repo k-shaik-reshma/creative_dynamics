@@ -6,7 +6,7 @@
     <div class="text-4xl font-bold mb-5">Dishes</div>
     <form [formGroup]="dishForm" (ngSubmit)="onSubmit()" class="space-y-10">
       <div formArrayName="dishes" class="space-y-1">
-        <div *ngFor="let dish of dishesFormArray.controls; let i = index" [formGroupName]="i" class="p-5 bg-white rounded-lg shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+        <div *ngFor="let dish of dishesFormArray.controls; let i = index" [formGroupName]="i" class="p-5 bg-white rounded-lg shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-103 hover:bg-gray-200">
           <label for="dish_name_{{i}}" class="block text-sm font-medium text-gray-700">Dish Name</label>
           <input id="dish_name_{{i}}" formControlName="dish_name" placeholder="Dish Name" class="w-full p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-green-500 transition duration-300">
           
