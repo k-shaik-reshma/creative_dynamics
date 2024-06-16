@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { LandingPageComponent } from './features/landing-page/landing-page.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 

@@ -1,14 +1,32 @@
-<nav class="bg-gray-800 w-64 h-full fixed top-0 left-0 overflow-y-auto">
+<nav class="bg-gray-800 w-64 h-full fixed top-0 left-0 overflow-y-auto flex flex-col">
   <div class="flex items-center justify-center mt-8">
-    <img src="path_to_logo" alt="Logo" class="w-10 h-10">
-    <span class="text-white text-xl mx-2 font-semibold">THis is Side bar</span>
+    <img src="https://img.freepik.com/premium-vector/cloud-kitchen-simple-linear-logo-vector-icon-cloud-with-spoon-fork-combination-symbol_849689-561.jpg?w=1060" alt="Logo" class="w-10 h-10">
+    <span class="text-white text-xl mx-2 font-semibold">Cloud Kitchen</span>
   </div>
   
   <ul class="mt-6">
-    <li *ngFor="let item of sidebarItems" class="px-4 py-2 hover:bg-gray-700 cursor-pointer">
-      <!-- <a [routerLink]="item.route" class="text-white block">
-        {{ item.label }}
-      </a> -->
+    <li>
+      <a href="dashboard" class="px-4 py-2 hover:bg-gray-700 cursor-pointer text-white block">
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a href="Profile" class="px-4 py-2 hover:bg-gray-700 cursor-pointer text-white block">
+        My Profile
+      </a>
+    </li>
+    <li>
+      <a href="settings" class="px-4 py-2 hover:bg-gray-700 cursor-pointer text-white block">
+        Settings
+      </a>
+    </li>
+  </ul>
+
+  <ul class="mt-auto"> <!-- This uses "mt-auto" to push it to the bottom -->
+    <li>
+      <a class="px-4 py-2 hover:bg-gray-700 cursor-pointer text-center text-white block bg-gradient-to-br text-lg from-red-500 to-gray-500">
+        Logout
+      </a>
     </li>
   </ul>
 </nav>
