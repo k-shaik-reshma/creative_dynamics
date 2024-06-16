@@ -8,7 +8,6 @@ import { Dish } from '../models/dish.model';
 })
 export class DishService {
   private baseUrl = 'http://localhost:8000/api/v1';
-
   private dishesUrl = `${this.baseUrl}/dishes`; // Replace with your backend API URL
 
   constructor(private http: HttpClient) {}
@@ -18,7 +17,11 @@ export class DishService {
   }
 
   getDishById(dishId: number): Observable<Dish> {
-    const url = `${this.baseUrl}/dish/${dishId}`;
+    const url = `${this.baseUrl}/dishes/${dishId}`; // Corrected URL for fetching dish by ID
     return this.http.get<Dish>(url);
+  }
+
+  createDish(dishData: Dish): Observable<Dish> {
+    return this.http.post<Dish>(this.dishesUrl, dishData);
   }
 }

@@ -4,12 +4,12 @@ import { Dish } from '../../models/dish.model';
 import { DishService } from '../../core/dish.service';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
-
+import { ReactiveFormsModule } from '@angular/forms'; 
 @Component({
   selector: 'app-dish-detail',
   templateUrl: './dish-detail.component.html',
   standalone: true,
-  imports: [ CommonModule, SidebarComponent ],
+  imports: [ CommonModule, SidebarComponent, ReactiveFormsModule ],
   styleUrls: ['./dish-detail.component.css']
 })
 export class DishDetailComponent implements OnInit {

@@ -4,11 +4,12 @@ import { DishService } from '../../core/dish.service';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ SidebarComponent, CommonModule ],
+  imports: [ SidebarComponent, CommonModule, ReactiveFormsModule ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

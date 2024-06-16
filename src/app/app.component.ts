@@ -3,12 +3,12 @@ import { AuthService } from './core/auth.service';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { LandingPageComponent } from './features/landing-page/landing-page.component';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, LandingPageComponent, CommonModule ],
+  imports: [CommonModule, RouterOutlet, LandingPageComponent, CommonModule, ReactiveFormsModule ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
