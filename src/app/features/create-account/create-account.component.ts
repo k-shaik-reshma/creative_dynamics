@@ -3,6 +3,19 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { AuthService } from '../../core/auth.service';
 import { LeftSideComponent } from '../landing-page/left-side/left-side.component';
 
+
+
+function passwordMatcher(control: FormGroup): { [key: string]: boolean } | null {
+  const password = control.get('password');
+  const confirmPassword = control.get('confirmPassword');
+  if (password && confirmPassword && password.value !== confirmPassword.value) {
+    return { 'passwordMismatch': true };
+  }
+  return null;
+
+
+}
+
 @Component({
   selector: 'app-create-account',
   standalone: true,
@@ -17,9 +30,12 @@ export class CreateAccountComponent {
     this.accountForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required],
       full_name: ['', Validators.required],
-      type: ['chef', Validators.required] // Default to 'chef'
-    });
+      type: ['chef', Validators.required],
+      phone_number: ['', Validators.required],
+      location: ['', Validators.required]
+    }, { validator: passwordMatcher });
   }
 
   createUser() {
