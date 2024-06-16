@@ -17,7 +17,7 @@ export class DishService {
   }
 
   getDishById(dishId: number): Observable<Dish> {
-    const url = `${this.baseUrl}/dishes/${dishId}`; // Corrected URL for fetching dish by ID
+    const url = `${this.baseUrl}/dish/${dishId}`; // Corrected URL for fetching dish by ID
     return this.http.get<Dish>(url);
   }
 
