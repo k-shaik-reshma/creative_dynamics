@@ -3,6 +3,7 @@ import { Dish } from '../../models/dish.model';
 import { DishService } from '../../core/dish.service';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class DashboardComponent implements OnInit {
   dishes: Dish[] = [];
 
-  constructor(private dishService: DishService) {}
+  constructor(private dishService: DishService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadAllDishes();
@@ -29,5 +30,9 @@ export class DashboardComponent implements OnInit {
         console.error('Error fetching dishes:', error);
       }
     );
+  }
+
+  navigateToDish(dishId: number) {
+    this.router.navigate(['/dish', dishId]);
   }
 }

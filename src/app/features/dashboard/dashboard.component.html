@@ -1,11 +1,12 @@
-<div class="flex flex-row">
+<div class="flex flex-row bg-gradient-to-br from-gray-200 to-green-400 min-h-screen">
   <div class="w-1/5">
     <app-sidebar></app-sidebar>
   </div>
   <div class="w-5/6">
     <div class="text-4xl font-bold">Dishes</div>
-    <div class="grid grid-cols-3 gap-4 mt-4">
-      <div *ngFor="let dish of dishes" class="bg-white p-4 rounded-lg shadow-md">
+    <div class="grid grid-cols-4 gap-4 mt-4 mr-5 mb-10">
+      <div *ngFor="let dish of dishes" class="bg-white p-4 rounded-lg shadow-md cursor-pointer"
+           (click)="navigateToDish(dish.dish_id)">
         <h3 class="text-lg font-semibold">{{ dish.dish_name }}</h3>
         <p class="text-sm text-gray-600">{{ dish.dish_type }}</p>
         <p class="text-sm text-gray-700 mt-2">{{ dish.description }}</p>

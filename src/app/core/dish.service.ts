@@ -16,4 +16,9 @@ export class DishService {
   getAllDishes(): Observable<Dish[]> {
     return this.http.get<Dish[]>(this.dishesUrl);
   }
+
+  getDishById(dishId: number): Observable<Dish> {
+    const url = `${this.baseUrl}/dish/${dishId}`;
+    return this.http.get<Dish>(url);
+  }
 }

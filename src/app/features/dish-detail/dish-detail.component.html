@@ -1,0 +1,14 @@
+<div class="flex flex-row bg-gradient-to-br from-gray-200 to-green-400 min-h-screen">
+  <div class="w-1/5">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="w-5/6">
+    <div *ngIf="dish" class="bg-white p-4 rounded-lg shadow-md mr-5 mt-5">
+      <h3 class="text-lg font-semibold">{{ dish.dish_name }}</h3>
+      <p class="text-sm text-gray-600">{{ dish.dish_type }}</p>
+      <p class="text-sm text-gray-700 mt-2">{{ dish.description }}</p>
+      <p class="text-sm text-gray-800 mt-2">Chef: {{ dish.full_name }}</p>
+      <!-- Add more details as needed -->
+    </div>
+  </div>
+</div>
