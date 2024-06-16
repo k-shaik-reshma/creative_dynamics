@@ -2,22 +2,27 @@
   <div class="w-1/5">
     <app-sidebar></app-sidebar>
   </div>
-  <div class="w-5/6">
-    <div class="text-4xl font-bold">Dishes</div>
-    <form [formGroup]="dishForm" (ngSubmit)="onSubmit()" class="mt-4">
-      <div formArrayName="dishes">
-        <div *ngFor="let dishControl of dishesFormArray.controls; let i = index" class="mb-4">
-          <div [formGroupName]="i">
-            <label for="dish_name" class="block text-sm font-medium text-gray-700">Dish Name</label>
-            <input type="text" id="dish_name" formControlName="dish_name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-            <!-- Add more inputs for dish_type and description similarly -->
-          </div>
+  <div class="w-3/5 p-10 mx-auto">
+    <div class="text-4xl font-bold mb-5">Dishes</div>
+    <form [formGroup]="dishForm" (ngSubmit)="onSubmit()" class="space-y-10">
+      <div formArrayName="dishes" class="space-y-1">
+        <div *ngFor="let dish of dishesFormArray.controls; let i = index" [formGroupName]="i" class="p-5 bg-white rounded-lg shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+          <label for="dish_name_{{i}}" class="block text-sm font-medium text-gray-700">Dish Name</label>
+          <input id="dish_name_{{i}}" formControlName="dish_name" placeholder="Dish Name" class="w-full p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-green-500 transition duration-300">
+          
+          <label for="dish_type_{{i}}" class="block text-sm font-medium text-gray-700 mt-4">Dish Type</label>
+          <input id="dish_type_{{i}}" formControlName="dish_type" placeholder="Dish Type" class="w-full p-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:border-green-500 transition duration-300">
+          
+          <label for="description_{{i}}" class="block text-sm font-medium text-gray-700 mt-4">Description</label>
+          <textarea id="description_{{i}}" formControlName="description" placeholder="Description" class="w-full p-2 mt-1 border-2 border-gray-300 rounded-md focus:outline-none focus:border-green-500 transition duration-300"></textarea>
+          
+          <button type="button" (click)="createDish(i)" class="mt-1 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300">Create Dish</button>
         </div>
       </div>
-      <div class="flex justify-between mt-4">
-        <button type="button" (click)="addDish()" class="bg-gray-400 text-white py-2 px-4 rounded-md">Add More</button>
-        <button type="submit" class="bg-indigo-600 text-white py-2 px-4 rounded-md">Save</button>
+      <div class="text-center">
+        <button type="button" (click)="addDishForm()" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300 bg-gradient-to-br from-green-800 to-gray-800">Add More Dishes</button>
+        <button type="submit" class="px-4 py-2 ml-2 bg-purple-500 text-white rounded-md  transition duration-300 bg-gradient-to-br from-green-800 to-gray-800 hover:bg-purple-600">Submit all dishes</button>
       </div>
-    </form>
+      </form>
   </div>
 </div>
