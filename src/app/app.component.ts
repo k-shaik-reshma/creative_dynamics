@@ -12,7 +12,7 @@ import { LandingPageComponent } from './features/landing-page/landing-page.compo
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'creative_dynamics';
+  title = 'Cloud Kitchen';
   message: string = 'Loading...';
 
   constructor(private authService: AuthService) {}
