@@ -57,7 +57,7 @@ export class CreateAccountComponent {
     if (this.accountForm.valid) {
       this.authService.createUser(this.accountForm.value).subscribe({
         next: (response: any) => {
-          this.toastr.success('Hello world!', 'Account created');
+          this.toastr.success('', 'Account created');
           this.router.navigate(['/login']);
         },
         error: (error: any) => console.error('Error creating user', error),
