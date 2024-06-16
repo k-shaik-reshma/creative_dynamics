@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+  // Example items for sidebar
+  sidebarItems = [
+    { label: 'Home', route: '/dashboard' },
+    { label: 'Profile', route: '/profile' },
+    { label: 'Settings', route: '/settings' }
+    // Add more sidebar items as needed
+  ];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }

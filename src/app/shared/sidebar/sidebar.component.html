@@ -1,1 +1,14 @@
-<p>sidebar works!</p>
+<nav class="bg-gray-800 w-64 h-full fixed top-0 left-0 overflow-y-auto">
+  <div class="flex items-center justify-center mt-8">
+    <img src="path_to_logo" alt="Logo" class="w-10 h-10">
+    <span class="text-white text-xl mx-2 font-semibold">THis is Side bar</span>
+  </div>
+  
+  <ul class="mt-6">
+    <li *ngFor="let item of sidebarItems" class="px-4 py-2 hover:bg-gray-700 cursor-pointer">
+      <!-- <a [routerLink]="item.route" class="text-white block">
+        {{ item.label }}
+      </a> -->
+    </li>
+  </ul>
+</nav>

@@ -1,1 +1,13 @@
-<p>dashboard works!</p>
+<div class="flex">
+  <app-sidebar></app-sidebar>
+  <div class="flex-grow p-4">
+    <h2 class="text-2xl font-bold mb-4">All Dishes</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <div *ngFor="let dish of dishes" class="bg-white p-4 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold">{{ dish.dish_name }}</h3>
+        <p class="text-gray-700">{{ dish.description }}</p>
+        <!-- Add more details as needed -->
+      </div>
+    </div>
+  </div>
+</div>
