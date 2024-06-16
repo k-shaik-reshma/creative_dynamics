@@ -16,7 +16,7 @@
       <div class="w-full px-3 mb-3">
         <label for="confirmPassword" class="block uppercase tracking-wide text-xs font-bold mb-2">Confirm Password</label>
         <input formControlName="confirmPassword" type="password" placeholder="Confirm Password" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white">
-        <div *ngIf="accountForm.errors?.passwordMismatch && accountForm.touched" class="text-red-500 text-xs italic">
+        <div *ngIf="accountForm.errors?.['passwordMismatch'] && accountForm.touched" class="text-red-500 text-xs italic">
           Passwords must match.
         </div>
       </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../core/auth.service';
 import { LeftSideComponent } from '../landing-page/left-side/left-side.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -19,7 +20,7 @@ function passwordMatcher(control: FormGroup): { [key: string]: boolean } | null 
 @Component({
   selector: 'app-create-account',
   standalone: true,
-  imports: [ FormsModule, ReactiveFormsModule, LeftSideComponent ],
+  imports: [ FormsModule, ReactiveFormsModule, LeftSideComponent, CommonModule ],
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.css']
 })
