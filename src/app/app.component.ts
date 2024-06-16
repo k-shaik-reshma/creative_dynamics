@@ -8,7 +8,7 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, LandingPageComponent, DashboardComponent ],
+  imports: [CommonModule, RouterOutlet, LandingPageComponent, CommonModule ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
