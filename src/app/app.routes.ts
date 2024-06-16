@@ -1,19 +1,12 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { LandingPageComponent } from './features/landing-page/landing-page.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '/landing', component: LandingPageComponent },
-  { path: '**', redirectTo: '' }
+  { path: 'login', component: LandingPageComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default redirect to landing page
+  { path: '**', redirectTo: '/login' }, // Redirect to landing for any other route
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export { routes };
