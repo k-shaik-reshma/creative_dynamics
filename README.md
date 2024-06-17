@@ -1,4 +1,5 @@
-# CreativeDynamics
+# CreativeDynamics![logo](https://github.com/k-shaik-reshma/creative_dynamics/assets/41055170/bb092feb-8725-4e8a-83f3-e305d92fcd1d)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
 
