@@ -7,8 +7,9 @@
     <div class="grid grid-cols-4 gap-4 mt-4 mr-5 mb-10">
       <div *ngFor="let dish of dishes" class="bg-white p-4 rounded-lg shadow-md cursor-pointer transition duration-500 ease-linear transform hover:-translate-y-1 hover:scale-105 hover:text-underline"
            (click)="navigateToDish(dish.dish_id)">
-        <h3 class="text-lg font-semibold hover:text-underline">{{ dish.dish_name }}</h3>
-        <p class="text-sm text-gray-600 text-underline">{{ dish.dish_type }}</p>
+           <!-- <img [src]="'http://localhost:8000/uploads/dishes/' + getFileName(dish.image_url)" alt="Dish Image"/> -->
+           <h3 class="text-lg font-semibold hover:text-underline">{{ dish.dish_name }}</h3>
+           <p class="text-sm text-gray-600 text-underline">{{ dish.dish_type }}</p>
         <p class="text-sm text-gray-700 mt-2">{{ dish.description }}</p>
         <a [routerLink]="['/users/dishes', dish.user_id]" class="text-sm text-gray-800 mt-2 text-orange-300">Chef: {{ dish.full_name }}</a>
       </div>

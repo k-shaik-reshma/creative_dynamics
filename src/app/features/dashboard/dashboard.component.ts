@@ -15,11 +15,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class DashboardComponent implements OnInit {
   dishes: Dish[] = [];
+  dish: Dish = {
+    dish_id: 0,
+    dish_name: '',
+    dish_type: '',
+    description: '',
+    user_id: 0,
+    full_name: '',
+    email: '',
+    image_url: ''
+  };
+  dishFileName: string | undefined;
 
   constructor(private dishService: DishService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadAllDishes();
+    this.dishFileName = this.getFileName(this.dish.image_url);
   }
 
   loadAllDishes() {
@@ -35,5 +47,9 @@ export class DashboardComponent implements OnInit {
 
   navigateToDish(dishId: number) {
     this.router.navigate(['/dish', dishId]);
+  }
+
+  getFileName(url: string): string {
+    return url.substring(url.lastIndexOf('/') + 1);
   }
 }

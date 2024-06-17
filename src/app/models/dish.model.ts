@@ -6,4 +6,5 @@ export interface Dish {
   user_id: number;
   full_name: string;
   email: string;
+  image_url: string;
 }
