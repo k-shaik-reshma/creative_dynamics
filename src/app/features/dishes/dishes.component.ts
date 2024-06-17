@@ -41,4 +41,9 @@ export class DishesComponent implements OnInit {
   navigateToDish(dishId: number) {
     this.router.navigate(['/dish', dishId]);
   }
+
+  navigateToDishes() {
+    this.router.navigate(['/dashboard']);
+  }
+  
 }

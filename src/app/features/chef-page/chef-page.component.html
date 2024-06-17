@@ -3,7 +3,7 @@
     <app-sidebar></app-sidebar>
   </div>
   <div class="w-3/5 p-10 mx-auto">
-    <div class="text-4xl font-bold mb-5">Dishes</div>
+    <div class="text-4xl font-bold mb-5 text-center">Create a new dish</div>
     <form [formGroup]="dishForm" (ngSubmit)="onSubmit()" class="space-y-10">
       <div formArrayName="dishes" class="space-y-1">
         <div *ngFor="let dish of dishesFormArray.controls; let i = index" [formGroupName]="i" class="p-5 bg-white rounded-lg shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-103 hover:bg-gray-200">
