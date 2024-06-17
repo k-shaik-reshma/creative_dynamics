@@ -40,7 +40,7 @@ export class RightSideComponent {
             localStorage.setItem('userRole', response.user.type);
             localStorage.setItem('userId', response.user.id);
           } else if (response.user.type === 'customer') {
-            this.toastr.success('', 'Welcome back, customer!');
+            this.toastr.success('', `Welcome back, ${response.user.full_name}`!);
             this.router.navigate(['/dashboard']);
           }
         },

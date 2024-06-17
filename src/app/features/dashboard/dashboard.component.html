@@ -3,7 +3,7 @@
     <app-sidebar></app-sidebar>
   </div>
   <div class="w-5/6">
-    <div class="text-4xl font-bold hover:text-underline">Dishes</div>
+    <div class="text-4xl font-bold hover:text-underline text-center m-5">Dishes</div>
     <div class="grid grid-cols-4 gap-4 mt-4 mr-5 mb-10">
       <div *ngFor="let dish of dishes" class="bg-white p-4 rounded-lg shadow-md cursor-pointer transition duration-500 ease-linear transform hover:-translate-y-1 hover:scale-105 hover:text-underline"
            (click)="navigateToDish(dish.dish_id)">

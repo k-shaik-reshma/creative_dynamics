@@ -1,14 +1,28 @@
-<div class="border-1 text-black shadow-xl bg-gray-100 p-10 gap-2 md:w-2/3 mx-auto rounded-lg transition duration-500 ease-linear transform hover:-translate-y-1 hover:scale-105">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="gap-10 flex flex-col">
-    <div>
-      <label for="email" class="mr-10">Email:</label>
-      <input id="email" formControlName="email" type="email" class="text-xl rounded-md border-2">
+<div class="border-1 text-black shadow-xl bg-gray-100 p-10 gap-4 md:w-2/3 mx-auto rounded-lg transition duration-500 ease-linear transform hover:-translate-y-1 hover:scale-105">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
+    <div class="flex flex-col gap-2">
+      <div class="flex items-center gap-4">
+        <label for="email" class="w-1/4">Email:</label>
+        <input id="email" formControlName="email" type="email" class="w-3/4 text-xl p-2 rounded-md border-2 focus:border-green-500 focus:ring-1 focus:ring-green-500">
+      </div>
+      <!-- Error message for email -->
+      <div *ngIf="loginForm.controls['email'].errors?.['required'] && loginForm.controls['email'].touched" class="text-red-500 text-sm">
+        Email is required.
+      </div>
+      
     </div>
-    <div>
-      <label for="password" class="mr-5">Password:</label>
-      <input id="password" formControlName="password" type="password" class="text-xl rounded-md border-2">
+    <div class="flex flex-col gap-2">
+      <div class="flex items-center gap-4">
+        <label for="password" class="w-1/4">Password:</label>
+        <input id="password" formControlName="password" type="password" class="w-3/4 text-xl p-2 rounded-md border-2 focus:border-green-500 focus:ring-1 focus:ring-green-500">
+      </div>
+      <!-- Error message for password -->
+
+      <div *ngIf="loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched" class="text-red-500 text-sm">
+        Password is required.
+      </div>
     </div>
-    <button type="submit" class="text-white  bg-gradient-to-br from-green-800 to-gray-800 rounded-lg shadow-xl py-3">Login</button>
-    <a href='/create-account' class="text-white  bg-gradient-to-br from-green-800 to-gray-800 rounded-lg shadow-xl py-3 text-center">Create an account</a>
+    <button type="submit" class="text-white bg-gradient-to-br from-green-800 to-gray-800 rounded-lg shadow-xl py-3 transition duration-300 ease-in-out hover:from-green-700 hover:to-gray-700">Login</button>
+    <a href='/create-account' class="text-white bg-gradient-to-br from-green-800 to-gray-800 rounded-lg shadow-xl py-3 text-center transition duration-300 ease-in-out hover:from-green-700 hover:to-gray-700">Create an account</a>
   </form>
 </div>
