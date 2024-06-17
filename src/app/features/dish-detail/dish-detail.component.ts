@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Dish } from '../../models/dish.model';
 import { DishService } from '../../core/dish.service';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class DishDetailComponent implements OnInit {
   dish: Dish | undefined;
 
-  constructor(private route: ActivatedRoute, private dishService: DishService) {}
+  constructor(private route: ActivatedRoute, private dishService: DishService, private router: Router) {}
 
   ngOnInit(): void {
     const dishId = Number(this.route.snapshot.paramMap.get('id'));
@@ -31,5 +31,9 @@ export class DishDetailComponent implements OnInit {
         console.error('Error fetching dish details:', error);
       }
     );
+  }
+
+  navigateToDishes() {
+    this.router.navigate(['/dashboard']);
   }
 }

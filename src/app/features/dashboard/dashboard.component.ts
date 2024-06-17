@@ -16,22 +16,21 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class DashboardComponent implements OnInit {
   dishes: Dish[] = [];
   dish: Dish = {
-    dish_id: 0,
+    id: 0,
     dish_name: '',
     dish_type: '',
     description: '',
     user_id: 0,
     full_name: '',
     email: '',
-    image_url: ''
+    location: '',
+    phone_number: ''
   };
-  dishFileName: string | undefined;
 
   constructor(private dishService: DishService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadAllDishes();
-    this.dishFileName = this.getFileName(this.dish.image_url);
   }
 
   loadAllDishes() {

@@ -5,16 +5,16 @@
   </div>
   
   <ul class="mt-6" >
-    <li>
+    <li *ngIf="getUserRole() === 'chef'">
       <a href="dashboard" class="px-4 py-2 hover:bg-gray-700 cursor-pointer text-white block">
         Dashboard
       </a>
     </li>
-    <li>
+    <!-- <li>
       <a href="Profile" class="px-4 py-2 hover:bg-gray-700 cursor-pointer text-white block">
         My Profile
       </a>
-    </li>
+    </li> -->
 
     <li *ngIf="getUserRole() === 'chef'">
       <a [routerLink]="['/users/dishes', userId]" class="px-4 py-2 hover:bg-gray-700 cursor-pointer text-white block">
