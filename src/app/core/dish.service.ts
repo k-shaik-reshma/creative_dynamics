@@ -24,4 +24,8 @@ export class DishService {
   createDish(dishData: Dish): Observable<Dish> {
     return this.http.post<Dish>(this.dishesUrl, dishData);
   }
+
+  getDishesByUser(userId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/users/${userId}/dishes`);
+  }
 }

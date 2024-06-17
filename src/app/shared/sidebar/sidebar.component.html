@@ -15,9 +15,10 @@
         My Profile
       </a>
     </li>
-    <li>
-      <a href="settings" class="px-4 py-2 hover:bg-gray-700 cursor-pointer text-white block">
-        Settings
+
+    <li *ngIf="getUserRole() === 'chef'">
+      <a [routerLink]="['/users/dishes', userId]" class="px-4 py-2 hover:bg-gray-700 cursor-pointer text-white block">
+        My Dishes
       </a>
     </li>
   </ul>

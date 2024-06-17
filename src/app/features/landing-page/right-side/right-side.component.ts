@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-right-side',
@@ -19,7 +20,8 @@ export class RightSideComponent {
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastr: ToastrService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -33,8 +35,12 @@ export class RightSideComponent {
       .subscribe({
         next: (response: any) => {
           if (response.user.type === 'chef') {
+            this.toastr.success('', 'Welcome back, chef!');
             this.router.navigate(['/chef']);
+            localStorage.setItem('userRole', response.user.type);
+            localStorage.setItem('userId', response.user.id);
           } else if (response.user.type === 'customer') {
+            this.toastr.success('', 'Welcome back, customer!');
             this.router.navigate(['/dashboard']);
           }
         },

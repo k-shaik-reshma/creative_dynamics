@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Dish } from '../../models/dish.model';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-chef-page',
@@ -16,13 +17,14 @@ import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 export class ChefPageComponent implements OnInit {
   dishForm: FormGroup;
   dishes: Dish[] = [];
-  userId: number = 21; // Adjust as needed
+  userId: string = localStorage.getItem('userId') || '';
 
   constructor(
     private fb: FormBuilder,
     private dishService: DishService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.dishForm = this.fb.group({
       dishes: this.fb.array([this.createDishFormGroup()])
@@ -39,6 +41,10 @@ export class ChefPageComponent implements OnInit {
       dish_type: ['', Validators.required],
       description: ['', Validators.required]
     });
+  }
+
+  deleteDish(index: number) {
+    this.dishesFormArray.removeAt(index);
   }
 
   get dishesFormArray(): FormArray {
@@ -62,7 +68,7 @@ export class ChefPageComponent implements OnInit {
 
       this.dishService.createDish(newDish).subscribe(
         (createdDish: Dish) => {
-          console.log('Dish created successfully:', createdDish);
+          this.toastr.success('Dish created successfully');
           this.dishes.push(createdDish); // Optionally add the created dish to the list
           dishFormGroup.reset(); // Reset the form group after successful creation
         },

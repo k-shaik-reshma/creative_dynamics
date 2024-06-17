@@ -3,13 +3,13 @@ import { Dish } from '../../models/dish.model';
 import { DishService } from '../../core/dish.service';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ SidebarComponent, CommonModule, ReactiveFormsModule ],
+  imports: [ SidebarComponent, CommonModule, ReactiveFormsModule, RouterModule ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

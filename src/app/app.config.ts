@@ -18,7 +18,6 @@ import { provideToastr } from 'ngx-toastr';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
     provideStore(),
     provideEffects(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
@@ -28,6 +27,7 @@ export const appConfig: ApplicationConfig = {
       timeOut: 50000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
-    })
+    }),
+    provideRouter(routes)
   ],
 };

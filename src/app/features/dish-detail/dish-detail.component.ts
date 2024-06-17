@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Dish } from '../../models/dish.model';
 import { DishService } from '../../core/dish.service';
 import { CommonModule } from '@angular/common';
@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   selector: 'app-dish-detail',
   templateUrl: './dish-detail.component.html',
   standalone: true,
-  imports: [ CommonModule, SidebarComponent, ReactiveFormsModule ],
+  imports: [ CommonModule, SidebarComponent, ReactiveFormsModule, RouterModule],
   styleUrls: ['./dish-detail.component.css']
 })
 export class DishDetailComponent implements OnInit {

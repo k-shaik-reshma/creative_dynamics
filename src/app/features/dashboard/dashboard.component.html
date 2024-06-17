@@ -10,7 +10,7 @@
         <h3 class="text-lg font-semibold hover:text-underline">{{ dish.dish_name }}</h3>
         <p class="text-sm text-gray-600 text-underline">{{ dish.dish_type }}</p>
         <p class="text-sm text-gray-700 mt-2">{{ dish.description }}</p>
-        <p class="text-sm text-gray-800 mt-2">Chef: {{ dish.full_name }}</p>
+        <a [routerLink]="['/users/dishes', dish.user_id]" class="text-sm text-gray-800 mt-2 text-orange-300">Chef: {{ dish.full_name }}</a>
       </div>
     </div>
   </div>
