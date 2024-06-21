@@ -1,4 +1,5 @@
-# CreativeDynamics![logo](https://github.com/k-shaik-reshma/creative_dynamics/assets/41055170/bb092feb-8725-4e8a-83f3-e305d92fcd1d)
+# CreativeDynamics![logo]
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
@@ -26,3 +27,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+![277999258_677544126886253_9159464592070740749_n](https://github.com/k-shaik-reshma/creative_dynamics/assets/41055170/da2a0585-bcf2-44b8-a8ae-8708a0c57a57)
